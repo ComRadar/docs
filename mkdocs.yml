@@ -1,10 +1,58 @@
-site_name: My Docs
+site_name: Stormworks Documentation
+site_url: https://www.stormworks.uk/
+site_description: Stormworks Lua API Documentation.
 
 theme:
+    logo: assets/logo.png
+    favicon: assets/favicon.png
     name: material
+    locale: en
+    highlightjs: true
+    hljs_languages:
+        - xml
+        - lua
+    palette:
+        primary: blue
+      - media: "(prefers-color-scheme: light)" 
+        scheme: default
+        toggle:
+            icon: material/toggle-switch-off-outline
+            name: Switch to dark mode
+      - media: "(prefers-color-scheme: dark)" 
+        scheme: slate
+        toggle:
+            icon: material/toggle-switch
+            name: Switch to light mode
+    features:
+        - navigation.tabs
+        - navigation.sections
+        - navigation.expand
 
 markdown_extensions:
+    - admonition
+    - toc:
+        permalink: true
     - pymdownx.highlight
     - pymdownx.inlinehilite
     - pymdownx.superfences
     - pymdownx.snippets
+
+plugins:
+    - search
+    
+nav:
+    - 'Home': 'index.md'
+    - 'Getting Started':
+        - 'Vehicle Editor': 'getting-started/vehicle-editor.md'
+        - 'Microcontroller Editor': 'getting-started/microcontroller-editor.md'
+        - 'Lua Basics': 'getting-started/lua-editor.md'
+        - 'Addon Editor': 'getting-started/addon-editor.md'
+    - 'Microcontroller Lua API':
+        - 'Introduction': 'api/microcontroller/intro.md'
+        - 'Callbacks': 'api/microcontroller/callbacks.md'
+        - 'Functions': 'api/microcontroller/functions.md'
+    - 'Addon Lua API':
+        - 'Commands': 'api/addon/commands.md'
+        - 'Matrices': 'api/addon/matrices.md'
+    - 'Hints and Tips': 'hints.md'
+    - 'About': 'about.md'
